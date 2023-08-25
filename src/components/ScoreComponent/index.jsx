@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from "./ScoreCompnent.module.css";
+import styles from "./ScoreComponent.module.css";
 
 function ScoreComponent({ jogo }) {
 	return (

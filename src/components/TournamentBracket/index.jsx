@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import styles from "./TournamentBracket.module.css";
-import HeaderComponent from "../components/HeaderComponent";
-import DateTimeComponent from "../components/DateTimeComponent";
-import ScoreComponent from "../components/ScoreComponent";
+import HeaderComponent from "../HeaderComponent";
+import DateTimeComponent from "../DateTimeComponent";
+import ScoreComponent from "../ScoreComponent";
+import ExtraInfoComponent from "../ExtraInfoComponent";
 
 function TournamentBracket({ fase }) {
 	const [jogos, setJogos] = useState([]);
@@ -25,21 +26,8 @@ function TournamentBracket({ fase }) {
 					<HeaderComponent jogo={jogo} />
 					<DateTimeComponent jogo={jogo} />
 					<ScoreComponent jogo={jogo} />
+					<ExtraInfoComponent jogo={jogo} />
 
-					<div className={styles.tempo_extra}>
-						{jogo.prorrogacao === "Sim" && (
-							<div className={styles.centralizar}>
-								<span>
-									Prorrogação? {jogo.prorrogacao} | Placar Prorrogação:
-									{jogo.placar_prorrogacao}
-								</span>
-								<span>
-									Pênaltis? {jogo.penaltis} | Placar Pênaltis:
-									{jogo.placar_penaltis}
-								</span>
-							</div>
-						)}
-					</div>
 					<h4> Vencedor: {jogo.vencedor}</h4>
 				</div>
 			))}

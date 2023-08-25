@@ -51,20 +51,17 @@ function Fixture({ fase, data }) {
 								{jogo.visitante}
 							</div>
 						</h3>
-						<div className={styles.tempo_extra}>
+
+						<div className={`${styles.tempo_extra} ${styles.centralizar}`}>
 							{jogo.prorrogacao === "Sim" && (
-								<div className={styles.centralizar}>
-									{jogo.prorrogacao === "Sim" && (
-										<div>
-											Prorrogação? {jogo.prorrogacao} | Placar{" "}
-											{jogo.placar_prorrogacao}
-										</div>
-									)}
-									{jogo.penaltis === "Sim" && (
-										<div>
-											Pênaltis? {jogo.penaltis} | Placar {jogo.placar_penaltis}
-										</div>
-									)}
+								<div>
+									Prorrogação? {jogo.prorrogacao} | Placar
+									{jogo.placar_prorrogacao}
+								</div>
+							)}
+							{jogo.penaltis === "Sim" && (
+								<div>
+									Pênaltis? {jogo.penaltis} | Placar {jogo.placar_penaltis}
 								</div>
 							)}
 						</div>
